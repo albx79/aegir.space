@@ -1,0 +1,12 @@
+Phase,Description,Approx Duration,Approx Condition,Confidence
+1,"A380 takeoff, climb, cruise to release point","~30-60 min","Subsonic, ~35,000 ft",High - standard airliner ops
+2,"Arm-guided release: Stage 2 walked clear of wing/fuselage via folding arms","seconds","Mach ~0.85, ~35,000 ft",Low - needs CFD on actual clearance distance/time
+3,"Attitude flip (inverted-carry to flight orientation)","few seconds","Same altitude, decelerating",Low - depends on control authority, roll inertia
+4,"Booster ignition (can overlap with flip, same-axis thrust)","~5-15 s burn","Accelerating through transonic",Medium - booster sizing not yet modeled
+5,"Ramjet ignition (only once flip + inlet alignment confirmed)","-","~Mach 2-2.5",Medium - hard gate from earlier analysis
+6,"Ramjet-powered climb/acceleration","~1-3 min (guess)","Mach 2.5 to 5, climbing to 20 km",Low - no thrust/drag model built yet
+7,"Ramjet cutoff, Stage 2/3 separation","seconds","Mach 5, 20 km, q~95 kPa, stag. temp ~1000C",Medium on environment, low on mechanism design
+8,"Coast/clearance gap before Stage 3 ignition (plume-impingement avoidance)","~1-5 s (guess)","Stage 2 and 3 diverging",Low - not sized yet
+9,"Stage 3 burn to orbit insertion","tens of seconds to a few minutes","Mach 5 to orbital velocity",High - standard rocket physics
+10,"Stage 2 unpowered glide-back, eventual landing","tens of minutes","Mach 5 to subsonic, 20 km to ground",Low - full glide trajectory/TPS not modeled
+11,"Stage 3 deorbit burn / reentry (per original spec)","-","-",Not yet discussed in detail
