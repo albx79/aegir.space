@@ -1,0 +1,12 @@
+falcon9-cost:
+    type: Web
+A380-spec:
+    type: Web
+SCA:
+    type: Web
+waverider-LD:
+    type: Web
+ramjet-ignition:
+     type: Web
+ramjet-ceiling:
+     type: Web

@@ -11,8 +11,8 @@
 
 // ---------- Document setup ----------
 #set document(
-  title: "Horizon: A Three-Stage Air-Breathing Launch System for Low-Cost LEO Access",
-  author: "[FILL: Author name(s)]",
+  title: "Aegir: A Three-Stage Air-Breathing Launch System for Low-Cost LEO Access",
+  author: "Alberto Colombo <albx79@gmail.com>",
 )
 
 #set page(
@@ -22,7 +22,7 @@
   header: context {
     if counter(page).get().first() > 1 [
       #set text(size: 9pt, fill: luma(120))
-      #smallcaps[Horizon Launch System — Conceptual Design] #h(1fr) Draft — #datetime.today().display()
+      #smallcaps[Aegir Launch System — Conceptual Design] #h(1fr) Draft — #datetime.today().display()
     ]
   }
 )
@@ -65,7 +65,7 @@
   #v(2cm)
 
   #text(size: 22pt, weight: "bold")[
-    Horizon: A Three-Stage Air-Breathing \
+    Aegir: A Three-Stage Air-Breathing \
     Launch System for Low-Cost LEO Access
   ]
 
@@ -102,9 +102,9 @@
 
 = Introduction <intro>
 
-Access to low Earth orbit (LEO) remains constrained by the high per-kilogram cost of conventional vertical-launch rocket systems. While recent developments in rocket reusability --- most notably the Falcon 9 first-stage recovery --- have reduced costs substantially, the dominant cost drivers remain vehicle development, structural mass, and refurbishment, rather than propellant expenditure @TODO-falcon9-cost.
+Access to low Earth orbit (LEO) remains constrained by the high per-kilogram cost of conventional vertical-launch rocket systems. While recent developments in rocket reusability --- most notably the Falcon 9 first-stage recovery --- have reduced costs substantially, the dominant cost drivers remain vehicle development, structural mass, and refurbishment, rather than propellant expenditure @falcon9-cost.
 
-This paper presents *Horizon*, a conceptual three-stage launch architecture in which the first two stages are air-breathing and only the third stage uses a conventional rocket engine. The central thesis is that:
+This paper presents *Aegir*, a conceptual three-stage launch architecture in which the first two stages are air-breathing and only the third stage uses a conventional rocket engine. The central thesis is that:
 
 + Air-breathing propulsion (turbofan for Stage 1, ramjet for Stage 2) offers specific impulse advantages over rocket propulsion across the Mach 0--5 regime, reducing the propellant mass burden on the orbital insertion stage.
 + Horizontal takeoff from existing commercial airports eliminates fixed launch infrastructure costs and provides operational flexibility in launch azimuth and staging latitude.
@@ -123,7 +123,7 @@ The architecture specifically avoids the *spaceplane problem* --- designing a si
 
 = Mission Architecture Overview <architecture>
 
-The Horizon system comprises three stages, summarised in @tab-stage-summary. Stage 1 and Stage 2 are both reusable air-breathing vehicles. Stage 3 is an expendable rocket upper stage.
+The Aegir system comprises three stages, summarised in @tab-stage-summary. Stage 1 and Stage 2 are both reusable air-breathing vehicles. Stage 3 is an expendable rocket upper stage.
 
 #figure(
   table(
@@ -138,7 +138,7 @@ The Horizon system comprises three stages, summarised in @tab-stage-summary. Sta
     [2], [Hypersonic ramjet carrier], [Solid booster + ramjet], [Full reuse (tow recovery)], [Mach 5.0, ~20,000 m],
     [3], [Rocket upper stage], [LOX/LH2 (or solid option)], [Expendable], [Orbital insertion],
   ),
-  caption: [Stage summary for the Horizon launch system.],
+  caption: [Stage summary for the Aegir launch system.],
 ) <tab-stage-summary>
 
 The mission sequence is as follows. Stage 2 is mounted externally to Stage 1 and carried to the optimal separation point. Following release, a small solid booster accelerates Stage 2 through the transonic regime to ramjet ignition speed (~Mach 2.5), after which the ramjet accelerates the combined Stage 2/3 stack to Mach 5 at approximately 20 km altitude. Stage 3 then separates and performs the orbital insertion burn. Stage 2 subsequently glides back to subsonic speed, rendezvouses with the returning Stage 1 aircraft via a tow-cable mechanism, and is recovered to a destination airport.
@@ -183,9 +183,9 @@ The full mission phase timeline, with estimated durations and physical condition
 
 == Vehicle Selection
 
-The Airbus A380F (freighter variant) is proposed as the Stage 1 carrier. The A380F offers a maximum takeoff weight of approximately 590,000 kg and a payload capacity of up to 158,000 kg in its freighter configuration @TODO-A380-spec. Its four-engine configuration, long range (~15,000 km), and wide availability of compatible airport infrastructure make it well-suited to the Stage 1 role.
+The Airbus A380F (freighter variant) is proposed as the Stage 1 carrier. The A380F offers a maximum takeoff weight of approximately 590,000 kg and a payload capacity of up to 158,000 kg in its freighter configuration @A380-spec. Its four-engine configuration, long range (~15,000 km), and wide availability of compatible airport infrastructure make it well-suited to the Stage 1 role.
 
-#note[The A380F was formally offered by Airbus but never entered production. The passenger variant A380 has been produced in quantity; conversion to a freighter-compatible structural standard for external payload mounting would require significant modification regardless. This is not necessarily a barrier: the 747 Shuttle Carrier Aircraft (SCA) established precedent for major structural modification of a commercial widebody for external payload carry @TODO-SCA.]
+#note[The A380F was formally offered by Airbus but never entered production. The passenger variant A380 has been produced in quantity; conversion to a freighter-compatible structural standard for external payload mounting would require significant modification regardless. This is not necessarily a barrier: the 747 Shuttle Carrier Aircraft (SCA) established precedent for major structural modification of a commercial widebody for external payload carry @SCA.]
 
 == External Mount Configuration
 
@@ -216,7 +216,7 @@ After physical clearance of the nacelle and fuselage, the arms release Stage 2 f
 
 == Vehicle Shape and Sizing
 
-Stage 2 is a waverider-class lifting body optimised for efficient hypersonic cruise in the Mach 2.5--5 regime. The waverider shape family generates lift by riding the compression shock it generates, achieving lift-to-drag ratios significantly higher than conventional blunt-body configurations at hypersonic speeds @TODO-waverider-LD.
+Stage 2 is a waverider-class lifting body optimised for efficient hypersonic cruise in the Mach 2.5--5 regime. The waverider shape family generates lift by riding the compression shock it generates, achieving lift-to-drag ratios significantly higher than conventional blunt-body configurations at hypersonic speeds @waverider-LD.
 
 The vehicle's outer dimensions are constrained by the 9.5 m carry gap (§@stage1). A width of 8.5 m is adopted, with proportions derived from scaled X-43A geometry (length:width:height ratio approximately 5.5:2.3:1), yielding an estimated vehicle size of approximately:
 
@@ -232,7 +232,7 @@ Total enclosed volume is approximately 200--250 m³ at these proportions, suffic
 
 == Propulsion: Booster Phase
 
-A solid-propellant rocket booster bridges the gap between Stage 1 separation speed (Mach 0.85) and the ramjet minimum useful operating speed (~Mach 2.5). The ramjet cannot produce meaningful thrust below approximately Mach 2--2.5 due to insufficient inlet compression for stable subsonic combustion @TODO-ramjet-ignition.
+A solid-propellant rocket booster bridges the gap between Stage 1 separation speed (Mach 0.85) and the ramjet minimum useful operating speed (~Mach 2.5). The ramjet cannot produce meaningful thrust below approximately Mach 2--2.5 due to insufficient inlet compression for stable subsonic combustion @ramjet-ignition.
 
 The booster delta-v requirement is approximately 600 m/s, comprising ~490 m/s kinematic increment and ~110 m/s drag loss during transonic acceleration. Using HTPB composite solid propellant (Isp ~270 s), the Tsiolkovsky equation yields a booster propellant mass of ~20,300 kg and total booster mass of ~21,900 kg for a 100,000 kg total stack. The booster is jettisoned at Mach 2.5, reducing the stack mass for the ramjet phase to ~78,100 kg.
 
@@ -242,7 +242,7 @@ A solid booster is preferred over liquid alternatives (LOX/RP-1, LOX/LH2) for th
 
 == Propulsion: Ramjet Phase
 
-Following booster jettison at Mach 2.5, the ramjet accelerates the vehicle from Mach 2.5 to the Stage 3 separation speed of Mach 5.0 at approximately 20 km altitude. Mach 5.0 is selected as a conservative target within the established ramjet operating envelope; sources place the practical ramjet ceiling at approximately Mach 5--6, above which inlet temperature rise begins to preclude stable subsonic combustion @TODO-ramjet-ceiling.
+Following booster jettison at Mach 2.5, the ramjet accelerates the vehicle from Mach 2.5 to the Stage 3 separation speed of Mach 5.0 at approximately 20 km altitude. Mach 5.0 is selected as a conservative target within the established ramjet operating envelope; sources place the practical ramjet ceiling at approximately Mach 5--6, above which inlet temperature rise begins to preclude stable subsonic combustion @ramjet-ceiling.
 
 #todo[Insert ramjet performance data: thrust as a function of Mach number and altitude, specific fuel consumption, operating envelope. This determines ramjet propellant mass and burn duration, both currently estimated at ~30% of the post-jettison vehicle mass and ~1--3 minutes respectively. These are the least well-grounded quantitative claims in the paper.]
 
@@ -253,7 +253,7 @@ The separation conditions at the end of the ramjet phase are:
 - Dynamic pressure: ~95 kPa
 - Stagnation temperature: ~1,000°C
 
-The high dynamic pressure and stagnation temperature at separation are a materially harsher environment than the Stage 1/2 separation, and are discussed further in §@separation.
+The high dynamic pressure and stagnation temperature at separation are a materially harsher environment than the Stage 1/2 separation, and are discussed further in §@separation-s12.
 
 == Thermal Protection
 
@@ -285,7 +285,7 @@ This architecture eliminates the geographic coupling between separation point an
 
 = Stage 1/2 Separation <separation-s12>
 
-The Stage 1/2 separation is the most mechanically complex event in the mission sequence. Unlike conventional air-launched vehicles (Pegasus, LauncherOne) which are released from below the carrier aircraft and gain immediate gravity-assisted separation, Stage 2 in the Horizon system is mounted to the *side* of the carrier, requiring active guidance to achieve safe clearance.
+The Stage 1/2 separation is the most mechanically complex event in the mission sequence. Unlike conventional air-launched vehicles (Pegasus, LauncherOne) which are released from below the carrier aircraft and gain immediate gravity-assisted separation, Stage 2 in the Aegir system is mounted to the *side* of the carrier, requiring active guidance to achieve safe clearance.
 
 The inverted carry orientation (§@stage2) ensures that the inlet cowl --- the vehicle's bulkiest protrusion --- faces upward into the wing/fuselage gap rather than downward toward the ground, maximising ground clearance while minimising the height of material protruding below the wing root during carry.
 
@@ -320,7 +320,7 @@ The separation mechanism must:
 
 The sudden mass loss at separation (~30% of Stage 2's pre-separation mass, corresponding to Stage 3 plus payload at ~19,500 kg) induces a large, instantaneous shift in Stage 2's centre of gravity and moment of inertia. Stage 2's flight control system must handle this step change in trim, analogous to but larger in relative terms than the mass change experienced by a fighter aircraft releasing a large external store.
 
-#todo[Survey existing stage separation mechanisms at similar dynamic pressures: Atlas/Centaur interstage separation, Pegasus stage separation. Identify which mechanisms are most applicable and what the scaling implications are for Horizon's size class.]
+#todo[Survey existing stage separation mechanisms at similar dynamic pressures: Atlas/Centaur interstage separation, Pegasus stage separation. Identify which mechanisms are most applicable and what the scaling implications are for Aegir's size class.]
 
 
 // ============================================================
@@ -340,7 +340,7 @@ Starting from Mach 5 at 20 km altitude, the remaining delta-v to LEO is estimate
 - Loss reduction credit (reduced gravity/drag losses from high-altitude, high-speed start): ~500 m/s
 - *Remaining Stage 3 delta-v requirement: ~7,300 m/s*
 
-#todo[Ground the loss-reduction credit of 500 m/s in published trajectory analyses or simulation. This is currently an estimate. Pegasus XL achieves approximately 300--400 m/s credit from its lower separation conditions; Horizon's higher Mach/altitude should justify more, but the exact value should be derived rather than assumed. This is one of the cleaner literature-search tasks in the paper.]
+#todo[Ground the loss-reduction credit of 500 m/s in published trajectory analyses or simulation. This is currently an estimate. Pegasus XL achieves approximately 300--400 m/s credit from its lower separation conditions; Aegir's higher Mach/altitude should justify more, but the exact value should be derived rather than assumed. This is one of the cleaner literature-search tasks in the paper.]
 
 == Propellant and Mass Budget
 
@@ -413,13 +413,13 @@ A combined optimistic scenario (120,000 kg carry limit, 40% hardware fraction, 5
 
 #todo[Write this section. Key comparisons to include:
 
-1. *Pegasus XL* (Northrop Grumman / Orbital Sciences): air-launched, three solid stages, ~450 kg to LEO from ~23,000 kg launch mass. Horizon carries ~4× the launch mass and targets ~4× the payload, at roughly similar payload fraction (~2%). Key difference: Horizon uses air-breathing rather than all-rocket stages for the first two stages, potentially reducing propellant costs at the expense of Stage 2 development complexity.
+1. *Pegasus XL* (Northrop Grumman / Orbital Sciences): air-launched, three solid stages, ~450 kg to LEO from ~23,000 kg launch mass. Aegir carries ~4× the launch mass and targets ~4× the payload, at roughly similar payload fraction (~2%). Key difference: Aegir uses air-breathing rather than all-rocket stages for the first two stages, potentially reducing propellant costs at the expense of Stage 2 development complexity.
 
 2. *Virgin Orbit / LauncherOne*: air-launched liquid-propellant rocket, ~500 kg to LEO, 747-based carrier. Relevant as the closest operational precedent to Stage 1 underwing pylon mounting. Ceased operations 2023.
 
 3. *Stratolaunch / Roc + Talon-A*: purpose-built twin-fuselage carrier, world's largest aircraft by wingspan. Relevant as a precedent for purpose-built air-launch carrier design and separation testing methodology.
 
-4. *SABRE / Skylon (Reaction Engines)*: single-stage-to-orbit concept using a combined-cycle engine. Contrast with Horizon's deliberate avoidance of the single-stage-to-orbit problem; Horizon addresses only the Mach 0--5 air-breathing slice and leaves orbital insertion to a conventional rocket.]
+4. *SABRE / Skylon (Reaction Engines)*: single-stage-to-orbit concept using a combined-cycle engine. Contrast with Aegir's deliberate avoidance of the single-stage-to-orbit problem; Aegir addresses only the Mach 0--5 air-breathing slice and leaves orbital insertion to a conventional rocket.]
 
 
 // ============================================================
@@ -428,7 +428,7 @@ A combined optimistic scenario (120,000 kg carry limit, 40% hardware fraction, 5
 
 = Identified Risks and Open Questions <risks>
 
-The following items represent the most significant open technical questions requiring resolution before the Horizon concept can advance beyond Fermi-level feasibility assessment. They are listed in approximate order of programme risk.
+The following items represent the most significant open technical questions requiring resolution before the Aegir concept can advance beyond Fermi-level feasibility assessment. They are listed in approximate order of programme risk.
 
 + *Stage 2 aerodynamic performance*: No aerodynamic analysis of the Stage 2 waverider has been performed. Hypersonic L/D, drag polar, and inlet capture efficiency are required to validate the mass budget and glide-back range estimates. Priority: high. Method: CFD or wind-tunnel test at representative Mach numbers.
 
@@ -451,7 +451,7 @@ The following items represent the most significant open technical questions requ
 
 = Conclusions <conclusions>
 
-#fill-me[Write after all other sections are stable. Should: (1) restate the core claim (Horizon offers a path to ~2 t LEO payload using air-breathing first two stages, launched from commercial airports, with full Stage 1 and Stage 2 reuse via tow-cable recovery); (2) summarise the mass budget result and its key uncertainties; (3) identify the two or three most important next steps (aerodynamic study of Stage 2, structural assessment of A380 external mount, ramjet performance literature survey); (4) make a qualified claim about cost competitiveness relative to Pegasus/LauncherOne class systems.]
+#fill-me[Write after all other sections are stable. Should: (1) restate the core claim (Aegir offers a path to ~2 t LEO payload using air-breathing first two stages, launched from commercial airports, with full Stage 1 and Stage 2 reuse via tow-cable recovery); (2) summarise the mass budget result and its key uncertainties; (3) identify the two or three most important next steps (aerodynamic study of Stage 2, structural assessment of A380 external mount, ramjet performance literature survey); (4) make a qualified claim about cost competitiveness relative to Pegasus/LauncherOne class systems.]
 
 
 // ============================================================
@@ -474,4 +474,4 @@ The following items represent the most significant open technical questions requ
 ]
 
 // Placeholder bibliography block — replace with real .bib file
-// #bibliography("references.bib")
+#bibliography("references.yaml")
