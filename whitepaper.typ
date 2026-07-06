@@ -218,7 +218,7 @@ After physical clearance of the nacelle and fuselage, the arms release Stage 2 f
 
 Stage 2 is a waverider-class lifting body optimised for efficient hypersonic cruise in the Mach 2.5--5 regime. The waverider shape family generates lift by riding the compression shock it generates, achieving lift-to-drag ratios significantly higher than conventional blunt-body configurations at hypersonic speeds @waverider-LD.
 
-The vehicle's outer dimensions are constrained by the 9.5 m carry gap (§@stage1). A width of 8.5 m is adopted, with proportions derived from scaled X-43A geometry (length:width:height ratio approximately 5.5:2.3:1), yielding an estimated vehicle size of approximately:
+The vehicle's outer dimensions are constrained by the 9.5 m carry gap (@stage1). A width of 8.5 m is adopted, with proportions derived from scaled X-43A geometry (length:width:height ratio approximately 5.5:2.3:1), yielding an estimated vehicle size of approximately:
 
 - Length: ~20 m
 - Width: ~8.5 m (constrained by carry gap)
@@ -253,7 +253,7 @@ The separation conditions at the end of the ramjet phase are:
 - Dynamic pressure: ~95 kPa
 - Stagnation temperature: ~1,000°C
 
-The high dynamic pressure and stagnation temperature at separation are a materially harsher environment than the Stage 1/2 separation, and are discussed further in §@separation-s12.
+The high dynamic pressure and stagnation temperature at separation are a materially harsher environment than the Stage 1/2 separation, and are discussed further in @separation-s12.
 
 == Thermal Protection
 
@@ -287,7 +287,7 @@ This architecture eliminates the geographic coupling between separation point an
 
 The Stage 1/2 separation is the most mechanically complex event in the mission sequence. Unlike conventional air-launched vehicles (Pegasus, LauncherOne) which are released from below the carrier aircraft and gain immediate gravity-assisted separation, Stage 2 in the Aegir system is mounted to the *side* of the carrier, requiring active guidance to achieve safe clearance.
 
-The inverted carry orientation (§@stage2) ensures that the inlet cowl --- the vehicle's bulkiest protrusion --- faces upward into the wing/fuselage gap rather than downward toward the ground, maximising ground clearance while minimising the height of material protruding below the wing root during carry.
+The inverted carry orientation (@stage2) ensures that the inlet cowl --- the vehicle's bulkiest protrusion --- faces upward into the wing/fuselage gap rather than downward toward the ground, maximising ground clearance while minimising the height of material protruding below the wing root during carry.
 
 The release sequence is as follows:
 
@@ -350,7 +350,7 @@ Using LOX/LH2 propellant (Isp ~440 s, or up to ~460 s for an RL-10-class engine 
 - Stage 3 dry mass (structure, engine, tanks, avionics) at 10% of propellant: ~1,590 kg
 - *Payload to LEO: ~2,000 kg*
 
-#note[This figure should be treated as a Fermi estimate, not a design-grade performance prediction. The dominant uncertainties are the external mount limit (100,000 kg assumed), the Stage 2 hardware mass fraction (45% assumed), and the Stage 3 loss-reduction credit (500 m/s assumed). A parametric sensitivity analysis is presented in §@mass-budget.]
+#note[This figure should be treated as a Fermi estimate, not a design-grade performance prediction. The dominant uncertainties are the external mount limit (100,000 kg assumed), the Stage 2 hardware mass fraction (45% assumed), and the Stage 3 loss-reduction credit (500 m/s assumed). A parametric sensitivity analysis is presented in @mass-budget.]
 
 == Modular Propellant Option
 
@@ -376,7 +376,7 @@ The baseline mass budget is structured as follows, proceeding from the A380 exte
     align: (left, right, left),
     stroke: 0.5pt,
     table.header([*Parameter*], [*Value*], [*Notes*]),
-    [A380 external carry limit], [100,000 kg], [Key uncertain assumption — see §@stage1],
+    [A380 external carry limit], [100,000 kg], [Key uncertain assumption — see @stage1],
     [Solid booster propellant], [~20,300 kg], [Tsiolkovsky, Isp = 270 s, Δv = 600 m/s],
     [Solid booster dry mass], [~1,600 kg], [8% of propellant],
     [*Total booster (jettisoned)*], [*~21,900 kg*], [Jettisoned at Mach 2.5],
